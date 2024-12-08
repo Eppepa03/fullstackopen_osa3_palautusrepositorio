@@ -6,7 +6,9 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../puhelinluettelo_osa3_frontend && npm run build && powershell Copy-Item dist -Recurse ../puhelinluettelo_osa3_backend",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   },
   "author": "Elisa",
   "license": "ISC",
@@ -18,5 +20,11 @@
     "mongoose": "^8.8.3",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@stylistic/eslint-plugin-js": "^2.11.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0"
   }
 }
